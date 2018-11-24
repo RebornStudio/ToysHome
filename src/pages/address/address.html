@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon class="menu-icon"><img src="assets/imgs/ic_menu.png"></ion-icon>
+        </button>
+        <ion-title>{{'my_address_add_new' | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="form" padding-left padding-right>
+        <ion-list>
+            <ion-item>
+                <ion-label>{{'address_first_name' | translate}}</ion-label>
+                <ion-input type="text" text-right placeholder="" [(ngModel)]="address.first_name"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>{{'address_last_name' | translate}}</ion-label>
+                <ion-input type="text" text-right placeholder="" [(ngModel)]="address.last_name"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>{{'email' | translate}}</ion-label>
+                <ion-input type="email" text-right placeholder="" [(ngModel)]="address.email"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>{{'phone' | translate}}</ion-label>
+                <ion-input type="tel" text-right placeholder="" [(ngModel)]="address.phone"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>{{'address_address_1' | translate}}</ion-label>
+                <ion-input type="text" text-right placeholder="" [(ngModel)]="address.address_1"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>{{'address_address_2' | translate}}</ion-label>
+                <ion-input type="text" text-right placeholder="" [(ngModel)]="address.address_2"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>{{'address_city' | translate}}</ion-label>
+                <ion-input type="text" text-right placeholder="" [(ngModel)]="address.city"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>{{'address_state' | translate}}</ion-label>
+                <ion-input type="text" text-right placeholder="" [(ngModel)]="address.state"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>{{'address_country' | translate}}</ion-label>
+                <ion-input type="text" text-right placeholder="" [(ngModel)]="address.country"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>{{'address_postal' | translate}}</ion-label>
+                <ion-input type="number" text-right placeholder="" [(ngModel)]="address.postcode"></ion-input>
+            </ion-item>
+
+        </ion-list>
+        <div class="btn-fisx-bottom">
+            <button ion-button full class="bg-thime btn-round btn-text" (click)="saveAddress()">{{'Save Address' | translate}}</button>
+        </div>
+    </div>
+</ion-content>

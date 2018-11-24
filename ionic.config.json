@@ -1,0 +1,7 @@
+{
+  "name": "mobimall",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

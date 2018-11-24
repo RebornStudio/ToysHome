@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{'create_ac' | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="form" padding-left padding-right>
+        <p text-center padding-bottom margin-bottom>{{'reg_on' | translate}} {{config.appName}}</p>
+        <ion-list>
+            <ion-item>
+                <ion-label>{{'address_first_name' | translate}}</ion-label>
+                <ion-input type="text" text-right placeholder="{{'address_first_name' | translate}}" [(ngModel)]="registerRequest.first_name"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>{{'address_last_name' | translate}}</ion-label>
+                <ion-input type="text" text-right placeholder="{{'address_last_name' | translate}}" [(ngModel)]="registerRequest.last_name"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>{{'address_country' | translate}}</ion-label>
+                <ion-select [(ngModel)]="countryCode" placeholder="{{'select' | translate}}" multiple="false">
+                    <ion-option [value]="country.callingCodes[0]" *ngFor="let country of countries">{{country.name}}</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label>{{'phone' | translate}}</ion-label>
+                <ion-input type="tel" text-right placeholder="{{'phone' | translate}}" [(ngModel)]="registerRequest.username" (ngModelChange)="checkNumber($event)"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>{{'email' | translate}}</ion-label>
+                <ion-input type="email" text-right placeholder="{{'email' | translate}}" [(ngModel)]="registerRequest.email"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>{{'password' | translate}}</ion-label>
+                <ion-input type="password" text-right placeholder="{{'c_password' | translate}}" [(ngModel)]="registerRequest.password"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>{{'c2_password' | translate}}</ion-label>
+                <ion-input type="password" text-right placeholder="{{'c2_password' | translate}}" [(ngModel)]="registerRequestPasswordConfirm"></ion-input>
+            </ion-item>
+        </ion-list>
+        <p text-center [innerHTML]="authError"></p>
+        <button ion-button full class="bg-thime btn-round btn-text" (click)="register()" [disabled]="buttonDisabled">{{'Continue' | translate}}</button>
+    </div>
+    <p text-center (click)="signinPage()" class="btn-fisx-bottom">
+        <small>
+            {{'already_a/c' | translate}}
+            <span class="text-sky">
+                {{'login' | translate}}
+            </span>
+        </small>
+    </p>
+</ion-content>
